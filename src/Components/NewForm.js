@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Error = () => {
+const NewForm = () => {
   return <div></div>;
 };
 
-export default Error;
+export default NewForm;

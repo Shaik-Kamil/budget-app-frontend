@@ -1,11 +1,11 @@
 import React from 'react';
-
+import NewForm from '../Components/NewForm';
 const New = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <NewForm />
+    </div>
+  );
 };
 
 export default New;
