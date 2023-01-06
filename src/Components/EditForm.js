@@ -35,9 +35,9 @@ const EditForm = () => {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Item Name:</label>
+        <label htmlFor="item">Item Name:</label>
         <input
-          id="name"
+          id="item"
           type="text"
           value={data.item_name}
           onChange={textChange}
@@ -78,6 +78,7 @@ const EditForm = () => {
           type="text"
           required
         />
+        <input type="submit" value="Submit" />
       </form>
       <Link to={`/transactions/${index}`}>
         <button>Nevermind!</button>
