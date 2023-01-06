@@ -11,7 +11,7 @@ const TDetails = () => {
   useEffect(() => {
     axios
       .get(`${API}/transactions/${index}`)
-      .then((res) => setTransaction(res))
+      .then((res) => setTransaction(res.data))
       .catch((err) => console.error(err));
   }, [index, navigate]);
 

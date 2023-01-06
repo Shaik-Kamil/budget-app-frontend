@@ -29,15 +29,18 @@ const EditForm = () => {
     event.preventDefault();
     axios
       .put(`${API}/transactions/${index}`, data)
-      .then((res) => setData(res.data))
+      .then((res) => {
+        setData(res.data);
+        navigate(`/transactions/${index}`);
+      })
       .catch((err) => console.log(err));
   };
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="item">Item Name:</label>
+        <label htmlFor="item_name">Item Name:</label>
         <input
-          id="item"
+          id="item_name"
           type="text"
           value={data.item_name}
           onChange={textChange}
