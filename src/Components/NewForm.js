@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
 const NewForm = () => {
   const navigate = useNavigate();
-
   const [transaction, setTransaction] = useState({
     item_name: '',
     amount: 0,
@@ -17,7 +16,7 @@ const NewForm = () => {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     axios
       .post(`${API}/transactions`, transaction)
       .then((res) => {
@@ -27,7 +26,7 @@ const NewForm = () => {
       .catch((err) => console.error());
   };
   return (
-    <div className="Edit">
+    <div className="New">
       <form onSubmit={handleSubmit}>
         <label htmlFor="item_name">Item Name:</label>
         <input

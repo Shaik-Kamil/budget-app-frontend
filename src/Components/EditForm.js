@@ -7,7 +7,7 @@ const EditForm = () => {
   let { index } = useParams();
   const navigate = useNavigate();
 
-  const [data, setData] = useState({
+  const [transaction, setTransaction] = useState({
     item_name: '',
     amount: 0,
     date: '',
@@ -15,26 +15,28 @@ const EditForm = () => {
     category: '',
   });
   const textChange = (event) => {
-    setData({ ...data, [event.target.id]: event.target.value });
+    setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
-
   useEffect(() => {
     axios
       .get(`${API}/transactions/${index}`)
-      .then((res) => {})
+      .then((res) => {
+        setTransaction(res.data);
+      })
       .catch((err) => console.log(err));
   }, [index]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`${API}/transactions/${index}`, data)
+      .put(`${API}/transactions/${index}`, transaction)
       .then((res) => {
-        setData(res.data);
+        setTransaction(res.data);
         navigate(`/transactions/${index}`);
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
@@ -42,7 +44,7 @@ const EditForm = () => {
         <input
           id="item_name"
           type="text"
-          value={data.item_name}
+          value={transaction.item_name}
           onChange={textChange}
           placeholder="Enter spending/ income"
           required
@@ -50,7 +52,7 @@ const EditForm = () => {
         <label htmlFor="amount">Amount :</label>
         <input
           id="amount"
-          value={data.amount}
+          value={transaction.amount}
           onChange={textChange}
           type="number"
           placeholder="Enter amount"
@@ -59,16 +61,15 @@ const EditForm = () => {
         <label htmlFor="date">Date :</label>
         <input
           id="date"
-          value={data.date}
+          value={transaction.date}
           onChange={textChange}
           type="date"
-          placeholder="MM/DD/YYYY"
           required
         />
         <label htmlFor="from">From :</label>
         <input
           id="from"
-          value={data.from}
+          value={transaction.from}
           onChange={textChange}
           type="text"
           required
@@ -76,7 +77,7 @@ const EditForm = () => {
         <label htmlFor="category">Category :</label>
         <input
           id="category"
-          value={data.category}
+          value={transaction.category}
           onChange={textChange}
           type="text"
           required
