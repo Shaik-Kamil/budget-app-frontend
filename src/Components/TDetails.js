@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
@@ -11,7 +12,9 @@ const TDetails = () => {
   useEffect(() => {
     axios
       .get(`${API}/transactions/${index}`)
-      .then((res) => setTransaction(res.data))
+      .then((res) => {
+        setTransaction(res.data);
+      })
       .catch((err) => console.error(err));
   }, [index, navigate]);
 
@@ -23,11 +26,17 @@ const TDetails = () => {
       })
       .catch((err) => console.error(err));
   };
+
+  // const date = new Date(transaction['date']);
+  // const readableDate = new Intl.DateTimeFormat('en-US', {
+  //   dateStyle: 'long',
+  // }).format(date);
+
   return (
-    <div>
-      <div>
+    <div className="transaction-details">
+      <div className="individual-card">
         <h2>{transaction.item_name}</h2>
-        <p>{transaction.amount}</p>
+        <p>${transaction.amount}</p>
         <p>{transaction.date}</p>
         <p>{transaction.from}</p>
         <p>{transaction.category}</p>

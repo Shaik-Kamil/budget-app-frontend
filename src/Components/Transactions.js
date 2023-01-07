@@ -62,8 +62,10 @@ const Transactions = () => {
     }
   }
   return (
-    <div>
-      {colorCoding()}
+    <div className="table">
+      <div className="h3">
+        <h3>{colorCoding()}</h3>
+      </div>
       <table>
         <thead>
           <tr>

@@ -27,7 +27,7 @@ const NewForm = () => {
   };
   return (
     <div className="New">
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="item_name">Item Name:</label>
         <input
           id="item_name"

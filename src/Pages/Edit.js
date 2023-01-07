@@ -3,7 +3,7 @@ import EditForm from '../Components/EditForm';
 
 const Edit = () => {
   return (
-    <div>
+    <div className="Edit-page">
       <h2>Edit Page</h2>
       <EditForm />
     </div>

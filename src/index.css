@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: blanchedalmond;
+  padding: 0;
+}
+
+.App {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  /* gap: 0.5rem; */
+}
+.home {
+  text-align: center;
+}
+.home img {
+  padding: 10px;
+  display: block;
+  max-width: 300px;
+  max-height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: blueviolet;
+}
+.nav h1 {
+  margin: 0.5rem 1rem;
+}
+.nav a {
+  text-decoration: none;
+  color: yellowgreen;
+}
+.nav button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table thead tr th {
+  padding: 2rem 8rem;
+  position: relative;
+  right: 5rem;
+}
+.table tbody tr td {
+  padding: 2rem 8rem;
+  border-bottom: 0.5px dotted rebeccapurple;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: darkgrey;
+}
+.table tbody tr:nth-child(odd) {
+  background-color: cadetblue;
+}
+
+.transaction-details {
+  border-radius: 0.5rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: darksalmon;
+  position: relative;
+  left: 20%;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 5px 6px, rgb(0, 0, 0, 0.1) -2px -3px 6px;
+}
+
+.individual-card {
+  padding: 5rem;
+  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 25%;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 5px 6px, rgb(0, 0, 0, 0.1) -2px -3px 6px;
+}
+
+.transaction-details button {
+  margin: 0.5rem 1rem;
+  padding: 5px;
+  background-color: grey;
+  border: 0.5px;
+}
+.form {
+  margin: auto;
+  width: 50%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form input {
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+  text-align: center;
+  color: blue;
+}
+.form label {
+  text-align: center;
+  color: brown;
+  margin-bottom: 0.5rem;
+}
+
+#submit {
+  margin: 0.5rem 1rem;
+  padding: 5px;
+  color: red;
+  background-color: linen;
+  text-align: center;
+}
+
+#submit:hover {
+  background-color: burlywood;
+  cursor: pointer;
+}
+
+.Edit button,
+.New button {
+  display: flex;
+  text-align: center;
+  position: relative;
+  background-color: crimson;
+  cursor: pointer;
+}
+
+.Edit button:hover,
+.New button:hover {
+  background-color: chartreuse;
+}
+
+.error img {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  margin-top: -50px;
+}

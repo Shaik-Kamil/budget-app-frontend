@@ -39,7 +39,7 @@ const EditForm = () => {
 
   return (
     <div className="Edit">
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="item_name">Item Name:</label>
         <input
           id="item_name"
@@ -82,7 +82,7 @@ const EditForm = () => {
           type="text"
           required
         />
-        <input type="submit" value="Submit" />
+        <input id="submit" type="submit" value="Submit" />
       </form>
       <Link to={`/transactions/${index}`}>
         <button>Nevermind!</button>

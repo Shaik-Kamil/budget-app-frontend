@@ -24,7 +24,7 @@ function App() {
             <Route path="/transactions/new" element={<New />} />
             <Route path="/transactions/:index" element={<Show />} />
             <Route path="/transactions/:index/edit" element={<Edit />} />
-            <Route path="/*" element={<Error />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </main>
       </Router>
