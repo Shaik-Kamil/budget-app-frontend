@@ -55,9 +55,11 @@ const TDetails = () => {
         <Link to={`/transactions/${index}/edit`}>
           <button className="btn btn-primary">Edit</button>
         </Link>
-        <button className="btn btn-danger" onClick={handleDelete}>
-          Delete
-        </button>
+        <Link to={`/transactions`}>
+          <button className="btn btn-danger" onClick={handleDelete}>
+            Delete
+          </button>
+        </Link>
       </div>
     </div>
   );
