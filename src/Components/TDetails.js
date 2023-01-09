@@ -27,17 +27,23 @@ const TDetails = () => {
       .catch((err) => console.error(err));
   };
 
-  // const date = new Date(transaction['date']);
-  // const readableDate = new Intl.DateTimeFormat('en-US', {
-  //   dateStyle: 'long',
-  // }).format(date);
+  // console.log(transaction.date);
 
+  function formatDate(d) {
+    // const date = new Date(d);
+    const readableDate = new Intl.DateTimeFormat('en-US', {
+      dateStyle: 'long',
+    }).format(d);
+
+    return readableDate;
+  }
   return (
     <div className="transaction-details">
       <div className="individual-card">
         <h2>{transaction.item_name}</h2>
         <p>${transaction.amount}</p>
         <p>{transaction.date}</p>
+        {/* <p>{formatDate(transaction.date)}</p> */}
         <p>{transaction.from}</p>
         <p>{transaction.category}</p>
         <br />
