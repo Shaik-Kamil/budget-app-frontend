@@ -82,9 +82,7 @@ const EditForm = () => {
           type="text"
           required
         />
-        <Link to={`transactions/${index}`}>
-          <input id="submit" type="submit" value="Submit" />
-        </Link>
+        <input id="submit" type="submit" value="Submit" />
       </form>
       <Link to={`/transactions/${index}`}>
         <button>Nevermind!</button>
