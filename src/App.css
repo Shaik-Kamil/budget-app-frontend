@@ -1,0 +1,15 @@
+.light {
+  background-color: blanchedalmond;
+}
+
+.dark {
+  background-color: black;
+  color: yellow;
+}
+
+.toggle {
+  color: white;
+  all: unset;
+  position: relative;
+  left: 49%;
+}
