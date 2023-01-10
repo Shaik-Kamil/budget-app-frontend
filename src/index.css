@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans';
 }
 
 body {
@@ -141,6 +142,10 @@ tbody td:not(td:first-of-type):hover {
   cursor: pointer;
 }
 
+.Edit-page h2 {
+  margin-left: 10px;
+}
+
 .Edit button,
 .New button {
   display: flex;
@@ -148,6 +153,7 @@ tbody td:not(td:first-of-type):hover {
   position: relative;
   background-color: crimson;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .Edit button:hover,
@@ -160,4 +166,64 @@ tbody td:not(td:first-of-type):hover {
   width: 100vw;
   height: 100vh;
   margin-top: -50px;
+}
+/* phone screen sizes */
+@media screen and (max-width: 600px) {
+  .nav button {
+    padding: 5px;
+    background-color: floralwhite;
+  }
+
+  .table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .table thead tr th {
+    padding: 25px;
+    right: 0;
+  }
+  .table tbody tr td {
+    padding: 25px;
+  }
+  .transaction-details {
+    border-radius: 0.5rem;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: 2%;
+  }
+
+  .individual-card {
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 400px;
+    background-color: darksalmon;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    box-shadow: rgb(0, 0, 0, 0.3) 3px 5px 6px, rgb(0, 0, 0, 0.1) -2px -3px 6px;
+  }
+
+  .Edit button {
+    margin-left: 10px;
+  }
+  .New {
+    padding-top: 100px;
+  }
+  .New button {
+    margin-left: 10px;
+  }
 }
