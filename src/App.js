@@ -1,7 +1,7 @@
 //! Dependencies
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 //? Pages
 import Mode from './Components/Mode';
@@ -29,12 +29,14 @@ function App() {
   }, [theme]);
   return (
     <div className={`App ${theme}`}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Budget Tracker</title>
-        <link rel="canonical" href="http://mysite.com/example"></link>
-        <meta name="description" content="Budget App"></meta>
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Budget Tracker</title>
+          <link rel="canonical" href="http://mysite.com/example"></link>
+          <meta name="description" content="Budget App"></meta>
+        </Helmet>
+      </HelmetProvider>
       <Router>
         <Nav />
 
